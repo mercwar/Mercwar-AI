@@ -9,7 +9,7 @@
 </div>
 
 
-# ✨ Digital Signatures powered by ⚡ Mercwar AI 
+# ✨ Digital Signatures Powered by ⚡ Mercwar AI 
 
 ---
 
