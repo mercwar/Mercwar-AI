@@ -83,6 +83,7 @@ Here is the finalized, production-ready section specifically documenting the Cyb
 🤖 Cyborg Management GUI & Telemetry Dashboard (cyborg)
 
 cyborg is a lightweight, zero-dependency native Win32 C Graphical User Interface engineered to eliminate command-line friction. It gives developers a real-time visual environment to discover configuration profiles, modify JSON manifests, execute the backend mercwarai.exe compiler, and stream automated JSON telemetry logs.
+```
                   ┌──────────────────────────────┐
                   │     [ Browse Workspace ]     │
                   └──────────────┬───────────────┘
@@ -103,7 +104,7 @@ cyborg is a lightweight, zero-dependency native Win32 C Graphical User Interface
 ┌──────────────────────────────┐                                 │
 │   [ Run Mercwar AI Engine ] ─┼──► (CreateProcessA Wrapper) ────┘
 └──────────────────────────────┘
-
+```
 Key Capabilities
 
 • Dynamic Profile Discovery: Automatically queries, filters, and maps *.json configuration profiles inside your working path without hardcoded limitations.
