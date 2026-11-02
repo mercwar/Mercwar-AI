@@ -186,6 +186,11 @@ cl /O2 mercwarai.c /Fe:mercwarai.exe advapi32.lib shell32.lib crypt32.lib
 
 ## 💻 CLI Reference & System Usage
 
+
+![mwai](images/mwsb.png)
+
+#
+
 Because modifying local machine certificate stores alters system security policies, `mercwarai` requires elevated permissions. If launched from a non-elevated prompt, it requests administrative access via a UAC prompt (`runas`).
 
 ### Universal Command Syntax
@@ -214,9 +219,7 @@ pause
 
 ```
 
-![mwai](images/mwsb.png)
 
----
 
 ## 📋 Configuration Manifest Layouts
 
