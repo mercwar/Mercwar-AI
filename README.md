@@ -76,6 +76,90 @@ The engine queries the Windows Registry and system `PATH` to locate:
 
 ---
 
+![cyborg](images/cyb.png)
+
+Here is the finalized, production-ready section specifically documenting the Cyborg Graphical Management Console (cyborg). This markdown block is ready to be appended straight to your mercwar/Mercwar-AI repository README.md.
+
+🤖 Cyborg Management GUI & Telemetry Dashboard (cyborg)
+
+cyborg is a lightweight, zero-dependency native Win32 C Graphical User Interface engineered to eliminate command-line friction. It gives developers a real-time visual environment to discover configuration profiles, modify JSON manifests, execute the backend mercwarai.exe compiler, and stream automated JSON telemetry logs.
+                  ┌──────────────────────────────┐
+                  │     [ Browse Workspace ]     │
+                  └──────────────┬───────────────┘
+                                 │
+                                 ▼
+                  ┌──────────────────────────────┐
+                  │   Manifests List (.json)     │
+                  └──────────────┬───────────────┘
+                                 │
+                                 ▼
+         ┌───────────────────────┴───────────────────────┐
+         ▼                                               ▼
+┌──────────────────────────────┐                ┌──────────────────────────────┐
+│  Live JSON Editor Window     │                │   JSON Telemetry Stream      │
+└──────────────┬───────────────┘                └──────────────────────────────┘
+               │                                                 ▲
+               ▼ (Auto-Saves Changes)                            │ (Parses Exit Codes)
+┌──────────────────────────────┐                                 │
+│   [ Run Mercwar AI Engine ] ─┼──► (CreateProcessA Wrapper) ────┘
+└──────────────────────────────┘
+
+Key Capabilities
+
+• Dynamic Profile Discovery: Automatically queries, filters, and maps *.json configuration profiles inside your working path without hardcoded limitations.
+• Asynchronous Buffer Writing: Leverages low-overhead native text streams (fopen/fwrite) to hot-patch manifest edits straight back to disk before runtime actions.
+• Isolated Thread Execution: Wraps CreateProcessA and WaitForSingleObject pipelines to safely hook onto the backend compiler, freezing UI crashes while operations run.
+• Structured Telemetry Feeds: Translates low-level process exit codes and structural events into standard JSON objects sent straight to an onboard monitoring console.
+
+🛠️ Core Win32 UI Dependencies
+
+Because cyborg compiles straight into standard machine instructions with zero dependencies on bloated runtime frameworks (like .NET, Java, or Electron), it links explicitly into native operating system subsystems:
+• comctl32.lib – Native Windows Common Controls Suite.
+• user32.lib & gdi32.lib – Standard display context loops, interface rendering, and UAC messaging hooks.
+• shell32.lib & ole32.lib – Provides system dialog interfaces (SHBrowseForFolderA) and structural shell memory pointers.
+• advapi32.lib – Oversees backend execution token rules.
+
+🚀 Compilation and Build Steps
+
+To compile the cyborg graphical dashboard application, pull open your native Developer Command Prompt for VS 2022, switch to your active repository path, and execute:
+cmd
+cl /O2 /W3 cyborg.c /Fe:cyborg.exe comctl32.lib user32.lib gdi32.lib shell32.lib ole32.lib advapi32.lib /SUBSYSTEM:WINDOWS
+Use code with caution.
+
+Compiler Flag Breakdown:
+
+• /O2: Applies aggressive execution speed optimizations for quick window rendering loops.
+• /W3: Enforces strict production-grade diagnostic logging metrics during build time.
+• /SUBSYSTEM:WINDOWS: Removes the legacy command prompt console background wrapper, presenting a clean, isolated desktop application layout.
+
+📊 Real-Time Telemetry Specification
+
+Every administrative choice, text save, or engine run pushes structural diagnostics straight to the visual monitoring terminal. The output matches this strict JSON data schema:
+json
+{
+  "CyborgTelemetry": {
+    "Status": "SUCCESS",
+    "Action": "EXECUTE_ENGINE",
+    "Message": "Mercwar AI executed with exit code 0",
+    "Target": "C:\\Mercwar-AI\\Dark-Com-2-bat.json"
+  }
+}
+Use code with caution.
+
+Operational Fields Described:
+
+• Status: Reflects active tool chain integrity. Outputs: READY, SUCCESS, WARNING, or ERROR.
+• Action: Tracks the exact functional event module firing (e.g., SELECT_DIRECTORY, LOAD_JSON, SAVE_JSON, EXECUTE_ENGINE).
+• Message: Easy-to-read, human-understandable breakdown of execution results or system codes.
+• Target: Identifies the exact absolute filesystem path being loaded or modified by the code wrapper.
+
+💻 System Operation & Interface Layout
+
+1. Workspace Sync: When initialized, the layout scopes out C:\Mercwar-AI. Click "Browse Directory..." to re-point the workspace to a different remote repository path.
+2. Manifest Editing: Clicking any discovered JSON configuration file inside the left-hand column streams its raw formatting block directly into the center modification window.
+3. Engine Invocation Loop: Clicking "Run Mercwar AI" automatically flushes your editor adjustments onto the physical configuration asset on disk, ensures mercwarai.exe is nearby, launches the signature routines, and logs the engine's real-time completion state.
+
+
 ## 🚀 Building from Source
 
 Because `mercwarai` is written in pure C (C89/C99 standard), it has zero external library dependencies and compiles directly via the Developer Command Prompt.
