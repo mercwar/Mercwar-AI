@@ -78,8 +78,6 @@ The engine queries the Windows Registry and system `PATH` to locate:
 
 ![cyborg](images/cyb.png)
 
-Here is the finalized, production-ready section specifically documenting the Cyborg Graphical Management Console (cyborg). This markdown block is ready to be appended straight to your mercwar/Mercwar-AI repository README.md.
-
 🤖 Cyborg Management GUI & Telemetry Dashboard (cyborg)
 
 cyborg is a lightweight, zero-dependency native Win32 C Graphical User Interface engineered to eliminate command-line friction. It gives developers a real-time visual environment to discover configuration profiles, modify JSON manifests, execute the backend mercwarai.exe compiler, and stream automated JSON telemetry logs.
