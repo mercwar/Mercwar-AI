@@ -1,19 +1,6 @@
-<div style="text-align: center; margin-bottom: 24px;">
-    <a target="_self" title="CLICK HERE to ENTER the GATEWAY FREE!" href="https://mercwar.github.io/Constellation/index.html">
-    <img 
-        src="https://raw.githubusercontent.com/mercwar/Robo-Knight-Gallery/refs/heads/main/Version%207/image_d2a07390.png" 
-        alt="Mercwar Constellation - Gateway Access" 
-        style="width:100%; height:auto; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.6);"
-    />
-    </a>
-</div>
-
-
-# ✨ Digital Signatures Powered by ⚡ Mercwar AI 
+# ✨ Digital Signatures Powered by ⚡ Mercwar AI
 
 ---
-
-![mwai](images/dsp.png)
 
 # 🛡️ Mercwar AI Automated Code-Signing Engine (`mercwarai`)
 
@@ -25,9 +12,9 @@ By orchestrating file paths, certificate policies, and environment variables thr
 
 ## 🏗️ Architecture & How It Works
 
-Instead of requiring manual execution of cryptic SDK command-line utilities, `mercwarai` runs a single-pass pipeline:
+Instead of requiring manual execution of cryptic SDK command-line utilities, `mercwarai` runs a streamlined single-pass pipeline:
 
-```
+```text
 [ JSON & INI Manifests ]
            │
            ▼
@@ -40,21 +27,19 @@ Instead of requiring manual execution of cryptic SDK command-line utilities, `me
 [ Local PFX Provisioning ]      ──► Built, self-signed, and trusted in machine stores
            │
            ▼
-[ Native Code-Signing ]        ──► Applied via signtool.exe with RFC 3161 timestamps
+[ Native Code-Signing ]         ──► Applied via signtool.exe with RFC 3161 timestamps
 
 ```
 
 1. **Manifest Parsing**: Extracts execution parameters from the JSON manifest and target binary paths from the INI file (`[CatalogFiles]` or `[TargetFiles]`).
-2. **Clean CDF Generation**: Generates a single-pass Catalog Definition File (`.cdf`) on the fly. It handles UTF-8 BOM markers and strips path duplication, preventing `CryptCATCDFOpen` (`0x7B`) runtime errors.
-3. **Catalog Compilation**: Calls `makecat.exe` to package file hashes into a `.cat` security catalog, separating base filenames in `Name=` from absolute destination directories in `ResultDir=`.
+2. **Clean CDF Generation**: Generates a single-pass Catalog Definition File (`.cdf`) on the fly, handling UTF-8 BOM markers and path normalization to prevent runtime errors.
+3. **Catalog Compilation**: Calls `makecat.exe` to package file hashes into a `.cat` security catalog, cleanly separating base filenames in `Name=` from absolute destination directories in `ResultDir=`.
 4. **Certificate Provisioning**: Programmatically generates an X.509 code-signing certificate asset (`.pfx`) and trusts it within the Windows `Root` and `My` certificate stores.
 5. **Timestamped Signing**: Executes `signtool.exe` to apply SHA-256 digital signatures to both the catalog and target binaries via an RFC 3161 network timestamp authority.
 
 ---
 
-![mwai](images/dsh.png)
-
-###### *"<i>I am CVBGOD, and I have given it to you</i>!"*
+###### *"I am CVBGOD, and I have given it to you!"*
 
 ## 🗝️ Required Toolchain & Prerequisites
 
@@ -130,8 +115,6 @@ pause
 
 ```
 
-![mwai](images/mwsb.png)
-
 ---
 
 ## 📋 Configuration Manifest Layouts
@@ -194,6 +177,11 @@ dc2ws2_dll=C:\MercwarAI\CL2\repositories\mercwar\Dark-Com-2\dc2ws2.dll
 
 ---
 
+## 📄 License
+
+Distributed under the terms of the **MIT License**. See the `LICENSE` file bundled with this repository for full regulatory permissions and conditions.
+
+**Copyright & Metadata**: Copyright © 1999–2026 Joseph M. Catalano (CVBGOD / MERCWAR Systems). All rights reserved.
 ## 📄 License
 
 Distributed under the terms of the **MIT License**. See the `LICENSE` file bundled with this repository for full regulatory permissions and conditions.
