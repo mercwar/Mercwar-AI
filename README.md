@@ -1,6 +1,19 @@
-Here is the merged, logically structured **README.md** for the `mercwar/Mercwar-AI` repository. It combines the technical architecture, toolchain requirements, build pipeline, manifest specifications, CLI documentation, and comprehensive legal safe-harbor protections into a clean document.
+<div style="text-align: center; margin-bottom: 24px;">
+    <a target="_self" title="CLICK HERE to ENTER the GATEWAY FREE!" href="https://mercwar.github.io/Constellation/index.html">
+    <img 
+        src="https://raw.githubusercontent.com/mercwar/Robo-Knight-Gallery/refs/heads/main/Version%207/image_d2a07390.png" 
+        alt="Mercwar Constellation - Gateway Access" 
+        style="width:100%; height:auto; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.6);"
+    />
+    </a>
+</div>
+
+
+# ✨ dc2url powerd by ⚡ Dark-Com-2  
 
 ---
+
+![dc24](images/dc2url.png)
 
 # 🛡️ Mercwar AI Automated Code-Signing Engine (`mercwarai`)
 
