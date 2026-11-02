@@ -15,10 +15,13 @@
 ![mwai](images/dsp.png)
 
 ###### 🛡️ Mercwar AI Automated Code-Signing Engine (`mercwarai`)
+######
 
 `mercwarai` is a high-performance, zero-dependency automation engine written in pure C for the bare Win32 API. It streamlines Windows security catalog compilation (`makecat`) and cryptographically secure SHA-256 binary code-signing (`signtool`) via unified JSON and INI configuration manifests.
 
 By orchestrating file paths, certificate policies, and environment variables through editable text manifests, `mercwarai` handles execution details with zero external framework overhead or third-party package dependencies.
+
+#
 
 ---
 
