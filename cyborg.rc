@@ -1,0 +1,47 @@
+// ============================================================================
+// RESOURCE IDENTIFIER MANIFEST MATRIX :: dc2URL SUITE / THE CYBORG CHRONICLES
+// ============================================================================
+
+#include <winres.h>
+
+// Define core resource constants explicitly for the compiler
+#define IDI_APP_ICON 101
+
+// 1. APPLICATION VISUAL ICON MAPPING
+// Maps your custom visual brand asset framework globally into the PE header space
+IDI_APP_ICON ICON "favicon.ico"
+
+// 2. OFFICIAL WINDOWS FILE VERSIONING INFRASTRUCTURE
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION    1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+ FILEFLAGS      VS_FF_DEBUG
+#else
+ FILEFLAGS      0x0L
+#endif
+ FILEOS         VOS_NT_WINDOWS32
+ FILETYPE       VFT_APP // Change to VFT_DLL inside your DLL resource block compilation
+ FILESUBTYPE    0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0" // Language: US English (0x0409), Character Set: Unicode (0x04B0)
+        BEGIN
+            VALUE "CompanyName",      "Mercwar AI\0"
+            VALUE "FileDescription",  "Mercwar AI Digital Signer\0"
+            VALUE "FileVersion",      "1.1.0.0\0"
+            VALUE "InternalName",     "cyborg\0"
+            VALUE "LegalCopyright",   "Copyright (C) 2026 Joseph Michael Catalano, Mercwar AI. All rights reserved.\0"
+            VALUE "OriginalFilename", "cyborg.exe\0" // Change to DarkComHeadless.dll inside your DLL build
+            VALUE "ProductName",      "Cyborg Mercwar AI Digital Signer interface\0"
+            VALUE "ProductVersion",   "1.1\0"
+            VALUE "Comments",         "Professional Digital signer interface for Microsoft Windows 11.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
