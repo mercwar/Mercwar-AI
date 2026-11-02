@@ -1,6 +1,19 @@
-# ✨ Digital Signatures Powered by ⚡ Mercwar AI
+update the readme and beautfy for the mwaireg command line tool <div style="text-align: center; margin-bottom: 24px;">
+    <a target="_self" title="CLICK HERE to ENTER the GATEWAY FREE!" href="https://mercwar.github.io/Constellation/index.html">
+    <img 
+        src="https://raw.githubusercontent.com/mercwar/Robo-Knight-Gallery/refs/heads/main/Version%207/image_d2a07390.png" 
+        alt="Mercwar Constellation - Gateway Access" 
+        style="width:100%; height:auto; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.6);"
+    />
+    </a>
+</div>
+
+
+# ✨ Digital Signatures Powered by ⚡ Mercwar AI 
 
 ---
+
+![mwai](images/dsp.png)
 
 # 🛡️ Mercwar AI Automated Code-Signing Engine (`mercwarai`)
 
@@ -12,34 +25,36 @@ By orchestrating file paths, certificate policies, and environment variables thr
 
 ## 🏗️ Architecture & How It Works
 
-Instead of requiring manual execution of cryptic SDK command-line utilities, `mercwarai` runs a streamlined single-pass pipeline:
+Instead of requiring manual execution of cryptic SDK command-line utilities, `mercwarai` runs a single-pass pipeline:
 
-```text
+```
 [ JSON & INI Manifests ]
-           │
-           ▼
+           │
+           ▼
 [ Single-Pass Clean .CDF File ] ──► Formatted to prevent encoding errors
-           │
-           ▼
-[ Security Catalog (.cat) ]     ──► Generated via makecat.exe using system APIs
-           │
-           ▼
-[ Local PFX Provisioning ]      ──► Built, self-signed, and trusted in machine stores
-           │
-           ▼
-[ Native Code-Signing ]         ──► Applied via signtool.exe with RFC 3161 timestamps
+           │
+           ▼
+[ Security Catalog (.cat) ]     ──► Generated via makecat.exe using system APIs
+           │
+           ▼
+[ Local PFX Provisioning ]      ──► Built, self-signed, and trusted in machine stores
+           │
+           ▼
+[ Native Code-Signing ]        ──► Applied via signtool.exe with RFC 3161 timestamps
 
 ```
 
 1. **Manifest Parsing**: Extracts execution parameters from the JSON manifest and target binary paths from the INI file (`[CatalogFiles]` or `[TargetFiles]`).
-2. **Clean CDF Generation**: Generates a single-pass Catalog Definition File (`.cdf`) on the fly, handling UTF-8 BOM markers and path normalization to prevent runtime errors.
-3. **Catalog Compilation**: Calls `makecat.exe` to package file hashes into a `.cat` security catalog, cleanly separating base filenames in `Name=` from absolute destination directories in `ResultDir=`.
+2. **Clean CDF Generation**: Generates a single-pass Catalog Definition File (`.cdf`) on the fly. It handles UTF-8 BOM markers and strips path duplication, preventing `CryptCATCDFOpen` (`0x7B`) runtime errors.
+3. **Catalog Compilation**: Calls `makecat.exe` to package file hashes into a `.cat` security catalog, separating base filenames in `Name=` from absolute destination directories in `ResultDir=`.
 4. **Certificate Provisioning**: Programmatically generates an X.509 code-signing certificate asset (`.pfx`) and trusts it within the Windows `Root` and `My` certificate stores.
 5. **Timestamped Signing**: Executes `signtool.exe` to apply SHA-256 digital signatures to both the catalog and target binaries via an RFC 3161 network timestamp authority.
 
 ---
 
-###### *"I am CVBGOD, and I have given it to you!"*
+![mwai](images/dsh.png)
+
+###### *"<i>I am CVBGOD, and I have given it to you</i>!"*
 
 ## 🗝️ Required Toolchain & Prerequisites
 
@@ -47,18 +62,18 @@ Building and executing the engine requires standard C/C++ compilation toolsets a
 
 ### Core Prerequisites
 
-* **Operating System**: Windows 10 or Windows 11 (x64 Architecture)
-* **Development Stack**: Visual Studio 2022 or Visual Studio Build Tools 2022
-* **Required Installer Workload**: *Desktop development with C++*
+- **Operating System**: Windows 10 or Windows 11 (x64 Architecture)
+- **Development Stack**: Visual Studio 2022 or Visual Studio Build Tools 2022
+- **Required Installer Workload**: *Desktop development with C++*
 
 ### Monitored SDK & System Tools
 
 The engine queries the Windows Registry and system `PATH` to locate:
 
-* `cl.exe` — Native Microsoft Visual C++ Compiler
-* `makecat.exe` — Windows Catalog Generation Suite
-* `signtool.exe` — Microsoft Digital Signature Engine
-* `certutil.exe` — Windows Certificate Management Utility
+- `cl.exe` — Native Microsoft Visual C++ Compiler
+- `makecat.exe` — Windows Catalog Generation Suite
+- `signtool.exe` — Microsoft Digital Signature Engine
+- `certutil.exe` — Windows Certificate Management Utility
 
 ---
 
@@ -77,11 +92,11 @@ cl /O2 mercwarai.c /Fe:mercwarai.exe advapi32.lib shell32.lib crypt32.lib
 
 ### Compiler Flag Reference:
 
-* `/O2`: Applies maximum execution speed optimizations.
-* `/Fe:mercwarai.exe`: Sets explicit binary output name.
-* `advapi32.lib`: Links Windows Registry and Security APIs.
-* `shell32.lib`: Links shell execution and elevation APIs (`ShellExecuteExA`).
-* `crypt32.lib`: Links Windows Cryptographic and Certificate Store APIs.
+- `/O2`: Applies maximum execution speed optimizations.
+- `/Fe:mercwarai.exe`: Sets explicit binary output name.
+- `advapi32.lib`: Links Windows Registry and Security APIs.
+- `shell32.lib`: Links shell execution and elevation APIs (`ShellExecuteExA`).
+- `crypt32.lib`: Links Windows Cryptographic and Certificate Store APIs.
 
 ---
 
@@ -115,6 +130,8 @@ pause
 
 ```
 
+![mwai](images/mwsb.png)
+
 ---
 
 ## 📋 Configuration Manifest Layouts
@@ -125,17 +142,17 @@ Establishes signing metadata, certificate names, PFX credentials, subject identi
 
 ```json
 {
-  "Config": {
-    "Title": "Mercwar AI Digital Signature",
-    "TimestampUrl": "http://timestamp.digicert.com",
-    "cert_cat": "Dark-Com-2.cat",
-    "cert_ini": "Dark-Com-2.ini",
-    "cert_cdf": "Dark-Com-2.cdf",
-    "cert_reset": "yes",
-    "cert_name": "Dark-Com-2.pfx",
-    "Subject": "CN=Mercwar AI, E=mercwar01@gmail.com",
-    "Password": "your_secure_password"
-  }
+  "Config": {
+    "Title": "Mercwar AI Digital Signature",
+    "TimestampUrl": "http://timestamp.digicert.com",
+    "cert_cat": "Dark-Com-2.cat",
+    "cert_ini": "Dark-Com-2.ini",
+    "cert_cdf": "Dark-Com-2.cdf",
+    "cert_reset": "yes",
+    "cert_name": "Dark-Com-2.pfx",
+    "Subject": "CN=Mercwar AI, E=mercwar01@gmail.com",
+    "Password": "your_secure_password"
+  }
 }
 
 ```
@@ -161,27 +178,22 @@ dc2ws2_dll=C:\MercwarAI\CL2\repositories\mercwar\Dark-Com-2\dc2ws2.dll
 
 ### 1. Third-Party Trademarks & Toolchain Disclaimer
 
-* All product names, visual logos, brands, corporate trademarks, and registered assets (including "Microsoft", "Windows", "Visual Studio", "Intel", and "MSVC") remain the property of their respective holders.
-* The invocation of these external toolchains within this repository does not imply any license agreement, commercial sponsorship, explicit corporate endorsement, or shared operational liability on the part of Microsoft Corporation or Intel Corporation.
+- All product names, visual logos, brands, corporate trademarks, and registered assets (including "Microsoft", "Windows", "Visual Studio", "Intel", and "MSVC") remain the property of their respective holders.
+- The invocation of these external toolchains within this repository does not imply any license agreement, commercial sponsorship, explicit corporate endorsement, or shared operational liability on the part of Microsoft Corporation or Intel Corporation.
 
 ### 2. Cryptographic Asset Liability & Operational Usage
 
-* **User Liability**: The operator assumes exclusive legal and technical responsibility for the creation, preservation, configuration, distribution, and runtime safety of digital signatures, compiled binaries, security catalogs, and private key containers (`.pfx`, `.pvk`).
-* **Environment Scoping**: Self-signed digital certificates generated by this software are designed exclusively for isolated engineering environments, development testing, offline staging, or local administrative setups. They carry no default public institutional trust and zero operational backing from commercial Certificate Authorities (CAs).
+- **User Liability**: The operator assumes exclusive legal and technical responsibility for the creation, preservation, configuration, distribution, and runtime safety of digital signatures, compiled binaries, security catalogs, and private key containers (`.pfx`, `.pvk`).
+- **Environment Scoping**: Self-signed digital certificates generated by this software are designed exclusively for isolated engineering environments, development testing, offline staging, or local administrative setups. They carry no default public institutional trust and zero operational backing from commercial Certificate Authorities (CAs).
 
 ### 3. Limitation of Liability & Indemnification
 
-* This source code is provided "AS IS" AND "WITH ALL FAULTS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS, COPYRIGHT HOLDERS, MAINTAINERS, OR THIRD-PARTY INFRASTRUCTURE PROVIDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF CUSTOM SIGNATURES AND DEPLOYED BINARIES.
-* By building, modifying, or executing this utility, you agree to indemnify, defend, and hold harmless the core developers and open-source contributors from any legal actions, operating system certificate revocations, data loss, or machine damages resulting from deployment.
+- This source code is provided "AS IS" AND "WITH ALL FAULTS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+- IN NO EVENT SHALL THE AUTHORS, COPYRIGHT HOLDERS, MAINTAINERS, OR THIRD-PARTY INFRASTRUCTURE PROVIDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF CUSTOM SIGNATURES AND DEPLOYED BINARIES.
+- By building, modifying, or executing this utility, you agree to indemnify, defend, and hold harmless the core developers and open-source contributors from any legal actions, operating system certificate revocations, data loss, or machine damages resulting from deployment.
 
 ---
 
-## 📄 License
-
-Distributed under the terms of the **MIT License**. See the `LICENSE` file bundled with this repository for full regulatory permissions and conditions.
-
-**Copyright & Metadata**: Copyright © 1999–2026 Joseph M. Catalano (CVBGOD / MERCWAR Systems). All rights reserved.
 ## 📄 License
 
 Distributed under the terms of the **MIT License**. See the `LICENSE` file bundled with this repository for full regulatory permissions and conditions.
