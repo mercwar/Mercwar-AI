@@ -23,7 +23,6 @@ By orchestrating file paths, certificate policies, and environment variables thr
 
 #
 
----
 
 ## 🏗️ Architecture & How It Works
 
