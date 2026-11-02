@@ -73,6 +73,9 @@
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/cyborg.bat</loc>
   </url>
   <url>
+    <loc>https://github.com/mercwar/Mercwar-AI/blob/main/cyborg_proc.c</loc>
+  </url>
+  <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/call.bat</loc>
   </url>
   <url>
@@ -80,6 +83,9 @@
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/mercwarai.json</loc>
+  </url>
+  <url>
+    <loc>https://github.com/mercwar/Mercwar-AI/blob/main/cyborg_proc.obj</loc>
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/mercwar.bat</loc>
@@ -98,6 +104,9 @@
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/mercwarai.rc</loc>
+  </url>
+  <url>
+    <loc>https://github.com/mercwar/Mercwar-AI/blob/main/cyborg.h</loc>
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/Dark-Com-2.pfx</loc>
