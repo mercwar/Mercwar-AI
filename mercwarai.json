@@ -1,0 +1,16 @@
+{
+ 
+  "Config": {
+    "Title": "Mercwar Ai Software",
+    "TimestampUrl": "http://timestamp.digicert.com",
+	"cert_cat": "mercwarai2.ini"
+	 "cert_ini": "mercwarai2.ini",
+	  "cert_cdf": "mercwarai.cdf",
+    	"cert_reset":"yes",
+    "cert_name": "mercwarai.pfx",
+    
+    "Subject": "CN=Mercwar AI, E=mercwar01@gmail.com",
+    "Password": "ofg48qpo5834gp56qg435dch8qp23hn45q8932p4"
+  },
+
+}

@@ -1,0 +1,13 @@
+{
+  "Config": {
+    "Title": "Mercwar AI Digital Signature",
+    "TimestampUrl": "http://timestamp.digicert.com",
+    "cert_cat": "Dark-Com-2.cat",
+    "cert_ini": "Dark-Com-2.ini",
+    "cert_cdf": "Dark-Com-2.cdf",
+    "cert_reset": "yes",
+    "cert_name": "Dark-Com-2.pfx",
+    "Subject": "CN=Mercwar AI, E=mercwar01@gmail.com",
+    "Password": "o87v5o756875f7654"
+  }
+}
