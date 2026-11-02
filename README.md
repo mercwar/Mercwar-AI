@@ -13,7 +13,7 @@
 
 ---
 
-![mwai](images/dsh.png)
+![mwai](images/dsp.png)
 
 # 🛡️ Mercwar AI Automated Code-Signing Engine (`mercwarai`)
 
