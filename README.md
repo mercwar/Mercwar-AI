@@ -13,7 +13,7 @@
 
 ---
 
-![dc24](images/dc2url.png)
+![mwai](images/dsh.png)
 
 # 🛡️ Mercwar AI Automated Code-Signing Engine (`mercwarai`)
 
@@ -51,6 +51,8 @@ Instead of requiring manual execution of cryptic SDK command-line utilities, `me
 5. **Timestamped Signing**: Executes `signtool.exe` to apply SHA-256 digital signatures to both the catalog and target binaries via an RFC 3161 network timestamp authority.
 
 ---
+
+![mwai](images/dsh.png)
 
 ## 🛠️ Required Toolchain & Prerequisites
 
@@ -125,6 +127,8 @@ cd /d "%~dp0"
 pause
 
 ```
+
+![mwai](images/mwsb.png)
 
 ---
 
