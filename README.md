@@ -11,6 +11,7 @@
 
 ## ✨ Digital Signatures Powered by ⚡ Mercwar AI 
 
+- The Free MSVC Compiler can be downloaded from Microsoft [here](https://aka.ms/vs/17/release/vs_BuildTools.exe)
 
 ![mwai](images/dsp.png)
 
@@ -82,6 +83,8 @@ The engine queries the Windows Registry and system `PATH` to locate:
 
 🤖 Cyborg Management GUI & Telemetry Dashboard (cyborg)
 
+- The Free MSVC Compiler can be downloaded from Microsoft [here](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+
 cyborg is a lightweight, zero-dependency native Win32 C Graphical User Interface engineered to eliminate command-line friction. It gives developers a real-time visual environment to discover configuration profiles, modify JSON manifests, execute the backend mercwarai.exe compiler, and stream automated JSON telemetry logs.
 ```
                   ┌──────────────────────────────┐
@@ -121,6 +124,8 @@ Because cyborg compiles straight into standard machine instructions with zero de
 • advapi32.lib – Oversees backend execution token rules.
 
 🚀 Compilation and Build Steps
+
+- The Free MSVC Compiler can be downloaded from Microsoft [here](https://aka.ms/vs/17/release/vs_BuildTools.exe)
 
 To compile the cyborg graphical dashboard application, pull open your native Developer Command Prompt for VS 2022, switch to your active repository path, and execute:
 cmd
