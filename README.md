@@ -168,6 +168,8 @@ Operational Fields Described:
 
 ## 🚀 Building from Source
 
+- The Free MSVC Compiler can be downloaded from Microsoft [here](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+
 Because `mercwarai` is written in pure C (C89/C99 standard), it has zero external library dependencies and compiles directly via the Developer Command Prompt.
 
 1. Open the **Developer Command Prompt for VS 2022**.
@@ -199,6 +201,8 @@ cl /O2 mercwarai.c /Fe:mercwarai.exe advapi32.lib shell32.lib crypt32.lib
 Because modifying local machine certificate stores alters system security policies, `mercwarai` requires elevated permissions. If launched from a non-elevated prompt, it requests administrative access via a UAC prompt (`runas`).
 
 ### Universal Command Syntax
+
+- The Free MSVC Compiler can be downloaded from Microsoft [here](https://aka.ms/vs/17/release/vs_BuildTools.exe)
 
 ```cmd
 mercwarai.exe --config <path_to_json> [switches]
