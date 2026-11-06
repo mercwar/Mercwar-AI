@@ -4,7 +4,8 @@ HWND hLblPath = NULL, hListJson = NULL, hEditJson = NULL, hEditStatus = NULL;
 HWND hBtnBrowse = NULL, hBtnSave = NULL, hBtnRun = NULL;
 HINSTANCE hInst = NULL;
 
-char currentDir[MAX_STR] = "C:\\Mercwar-AI";
+// Initialized dynamically at startup so it's always rooted to the binary path
+char currentDir[MAX_STR] = "";
 char selectedJsonPath[MAX_STR] = "";
 
 void LogJsonTelemetry(const char* status, const char* action, const char* message, const char* target) {
@@ -42,6 +43,7 @@ void SelectDirectory(HWND hWnd) {
         char path[MAX_STR];
         if (SHGetPathFromIDListA(pidl, path)) {
             strcpy_s(currentDir, sizeof(currentDir), path);
+            SetCurrentDirectoryA(currentDir); // Lock process working directory
             SetWindowTextA(hLblPath, currentDir);
             LoadJsonFilesFromDirectory(hWnd);
             LogJsonTelemetry("SUCCESS", "SELECT_DIRECTORY", "Directory loaded successfully.", currentDir);
@@ -185,6 +187,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     hInst = hInstance;
+
+    // ROOT RESOLUTION: Determine exact executable folder path dynamically
+    char exePath[MAX_PATH];
+    GetModuleFileNameA(hInstance, exePath, MAX_PATH);
+    
+    // Strip file name to isolate directory path
+    char* lastSlash = strrchr(exePath, '\\');
+    if (lastSlash) {
+        *lastSlash = '\0';
+        strcpy_s(currentDir, sizeof(currentDir), exePath);
+    } else {
+        strcpy_s(currentDir, sizeof(currentDir), "C:\\Mercwar-AI");
+    }
+
+    // Force application working directory to match binary root
+    SetCurrentDirectoryA(currentDir);
+
     WNDCLASSA wc = { 0 };
     wc.lpfnWndProc   = WndProc;
     wc.hInstance     = hInstance;

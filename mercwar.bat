@@ -1,9 +1,14 @@
-:: AVIS 
-:: AIFVS-ARTIFACT
-:: Filename: build_and_run.bat
+:: ============================================================================
+:: AVIS :: AIFVS-ARTIFACT
+:: Filename: build_mercwarai.bat
+:: ============================================================================
 @echo off
 setlocal enabledelayedexpansion
 cd /d "%~dp0"
+
+echo ============================================================
+echo        INITIALIZING MSVC BUILD ENVIRONMENT (x64)
+echo ============================================================
 
 if not defined VCINSTALLDIR (
     if exist "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" (
@@ -15,38 +20,61 @@ if not defined VCINSTALLDIR (
     ) else if exist "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" (
         call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
     ) else (
-        echo ERROR: Visual Studio vcvarsall.bat environment initializer script not found.
-        goto end
+        echo [ERROR] Visual Studio vcvarsall.bat environment initializer script not found.
+        goto error_exit
     )
 )
 
-:: Compile resource script if present
+echo.
+echo ============================================================
+echo          COMPILING RESOURCE SCRIPT (mercwarai.rc)
+echo ============================================================
 if exist "mercwarai.rc" (
     echo [INFO] Compiling resource script mercwarai.rc...
     rc mercwarai.rc
     if !errorlevel! neq 0 (
         echo [ERROR] Resource compilation failed!
-        goto end
+        goto error_exit
     )
-)
-
-echo [INFO] Compiling mercwarai.c with resource linkage...
-if exist "mercwarai.res" (
-    cl /O2 /W3 /D_CRT_SECURE_NO_WARNINGS mercwarai.c mercwarai.res /link Shell32.lib User32.lib Advapi32.lib /out:mercwarai.exe
 ) else (
-    cl /O2 /W3 /D_CRT_SECURE_NO_WARNINGS mercwarai.c /link Shell32.lib User32.lib Advapi32.lib /out:mercwarai.exe
-)
-	
-if %errorlevel% neq 0 (
-    echo [ERROR] Compilation failed!
-    pause
-    exit /b %errorlevel%
+    echo [WARN] mercwarai.rc not found. Skipping resource compilation.
 )
 
-echo [SUCCESS] Compiled mercwarai.exe successfully.
 echo.
-echo [INFO] Executing mercwarai.exe --config config.json
-rem mercwarai.exe --config config.json
+echo ============================================================
+echo          BUILDING CLI SIGNING ENGINE (mercwarai.exe)
+echo ============================================================
+if exist "mercwarai.c" (
+    echo [INFO] Compiling mercwarai.c...
+    if exist "mercwarai.res" (
+        cl /O2 mercwarai.c mercwarai.res /Fe:mercwarai.exe advapi32.lib shell32.lib crypt32.lib user32.lib gdi32.lib
+    ) else (
+        cl /O2 mercwarai.c /Fe:mercwarai.exe advapi32.lib shell32.lib crypt32.lib
+    )
+    
+    if !errorlevel! neq 0 (
+        echo [ERROR] Compilation of mercwarai.exe failed!
+        goto error_exit
+    )
+    echo [SUCCESS] Compiled mercwarai.exe successfully.
+) else (
+    echo [ERROR] mercwarai.c not found on disk.
+    goto error_exit
+)
+
+echo.
+echo ============================================================
+echo          BUILD COMPLETE :: mercwarai.exe READY
+echo ============================================================
+goto end
+
+:error_exit
+echo.
+echo ============================================================
+echo [FAILED] Build process encountered errors.
+echo ============================================================
+pause
+exit /b %errorlevel%
 
 :end
 pause
