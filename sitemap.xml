@@ -85,6 +85,9 @@
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/mercwarai.rc</loc>
   </url>
   <url>
+    <loc>https://github.com/mercwar/Mercwar-AI/blob/main/.gitmodules</loc>
+  </url>
+  <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/Dark-Com-2.cdf</loc>
   </url>
   <url>
@@ -107,9 +110,6 @@
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/cyborg.rc</loc>
-  </url>
-  <url>
-    <loc>https://github.com/mercwar/Mercwar-AI/blob/main/AVIS-DATALAKE.md</loc>
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/mercwarai.res</loc>
