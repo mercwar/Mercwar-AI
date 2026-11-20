@@ -19,6 +19,9 @@
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/mercwarai2.ini</loc>
   </url>
   <url>
+    <loc>https://github.com/mercwar/Mercwar-AI/blob/main/_config.yml</loc>
+  </url>
+  <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/favicon.ico</loc>
   </url>
   <url>
@@ -80,6 +83,9 @@
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/mercwarai.rc</loc>
+  </url>
+  <url>
+    <loc>https://github.com/mercwar/Mercwar-AI/blob/main/.gitmodules</loc>
   </url>
   <url>
     <loc>https://github.com/mercwar/Mercwar-AI/blob/main/Dark-Com-2.cdf</loc>
